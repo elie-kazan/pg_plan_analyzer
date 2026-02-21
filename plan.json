@@ -1,0 +1,483 @@
+ [                                                                                                                                                        +
+   {                                                                                                                                                      +
+     "Plan": {                                                                                                                                            +
+       "Node Type": "Gather Merge",                                                                                                                       +
+       "Parallel Aware": false,                                                                                                                           +
+       "Async Capable": false,                                                                                                                            +
+       "Startup Cost": 3657793.51,                                                                                                                        +
+       "Total Cost": 6429621.16,                                                                                                                          +
+       "Plan Rows": 23756864,                                                                                                                             +
+       "Plan Width": 98,                                                                                                                                  +
+       "Actual Startup Time": 86374.922,                                                                                                                  +
+       "Actual Total Time": 181633.894,                                                                                                                   +
+       "Actual Rows": 30002786,                                                                                                                           +
+       "Actual Loops": 1,                                                                                                                                 +
+       "Output": ["b1.id", "b1.random_text", "b1.random_number", "b1.created_at", "b2.id", "b2.random_text", "b2.random_number", "b2.created_at"],        +
+       "Workers Planned": 2,                                                                                                                              +
+       "Workers Launched": 2,                                                                                                                             +
+       "Shared Hit Blocks": 4812,                                                                                                                         +
+       "Shared Read Blocks": 98528,                                                                                                                       +
+       "Shared Dirtied Blocks": 0,                                                                                                                        +
+       "Shared Written Blocks": 0,                                                                                                                        +
+       "Local Hit Blocks": 0,                                                                                                                             +
+       "Local Read Blocks": 0,                                                                                                                            +
+       "Local Dirtied Blocks": 0,                                                                                                                         +
+       "Local Written Blocks": 0,                                                                                                                         +
+       "Temp Read Blocks": 1435395,                                                                                                                       +
+       "Temp Written Blocks": 1437185,                                                                                                                    +
+       "WAL Records": 0,                                                                                                                                  +
+       "WAL FPI": 0,                                                                                                                                      +
+       "WAL Bytes": 0,                                                                                                                                    +
+       "Plans": [                                                                                                                                         +
+         {                                                                                                                                                +
+           "Node Type": "Sort",                                                                                                                           +
+           "Parent Relationship": "Outer",                                                                                                                +
+           "Parallel Aware": false,                                                                                                                       +
+           "Async Capable": false,                                                                                                                        +
+           "Startup Cost": 3656793.48,                                                                                                                    +
+           "Total Cost": 3686489.56,                                                                                                                      +
+           "Plan Rows": 11878432,                                                                                                                         +
+           "Plan Width": 98,                                                                                                                              +
+           "Actual Startup Time": 83892.173,                                                                                                              +
+           "Actual Total Time": 102343.707,                                                                                                               +
+           "Actual Rows": 10000929,                                                                                                                       +
+           "Actual Loops": 3,                                                                                                                             +
+           "Output": ["b1.id", "b1.random_text", "b1.random_number", "b1.created_at", "b2.id", "b2.random_text", "b2.random_number", "b2.created_at"],    +
+           "Sort Key": ["b1.random_text"],                                                                                                                +
+           "Sort Method": "external merge",                                                                                                               +
+           "Sort Space Used": 1302376,                                                                                                                    +
+           "Sort Space Type": "Disk",                                                                                                                     +
+           "Shared Hit Blocks": 4812,                                                                                                                     +
+           "Shared Read Blocks": 98528,                                                                                                                   +
+           "Shared Dirtied Blocks": 0,                                                                                                                    +
+           "Shared Written Blocks": 0,                                                                                                                    +
+           "Local Hit Blocks": 0,                                                                                                                         +
+           "Local Read Blocks": 0,                                                                                                                        +
+           "Local Dirtied Blocks": 0,                                                                                                                     +
+           "Local Written Blocks": 0,                                                                                                                     +
+           "Temp Read Blocks": 1435395,                                                                                                                   +
+           "Temp Written Blocks": 1437185,                                                                                                                +
+           "WAL Records": 0,                                                                                                                              +
+           "WAL FPI": 0,                                                                                                                                  +
+           "WAL Bytes": 0,                                                                                                                                +
+           "Workers": [                                                                                                                                   +
+             {                                                                                                                                            +
+               "Worker Number": 0,                                                                                                                        +
+               "Actual Startup Time": 82028.470,                                                                                                          +
+               "Actual Total Time": 100615.478,                                                                                                           +
+               "Actual Rows": 9997511,                                                                                                                    +
+               "Actual Loops": 1,                                                                                                                         +
+               "Sort Method": "external merge",                                                                                                           +
+               "Sort Space Used": 1193504,                                                                                                                +
+               "Sort Space Type": "Disk",                                                                                                                 +
+               "JIT": {                                                                                                                                   +
+                 "Functions": 10,                                                                                                                         +
+                 "Options": {                                                                                                                             +
+                   "Inlining": true,                                                                                                                      +
+                   "Optimization": true,                                                                                                                  +
+                   "Expressions": true,                                                                                                                   +
+                   "Deforming": true                                                                                                                      +
+                 },                                                                                                                                       +
+                 "Timing": {                                                                                                                              +
+                   "Generation": 0.569,                                                                                                                   +
+                   "Inlining": 53.289,                                                                                                                    +
+                   "Optimization": 61.458,                                                                                                                +
+                   "Emission": 234.896,                                                                                                                   +
+                   "Total": 350.212                                                                                                                       +
+                 }                                                                                                                                        +
+               },                                                                                                                                         +
+               "Shared Hit Blocks": 93,                                                                                                                   +
+               "Shared Read Blocks": 31971,                                                                                                               +
+               "Shared Dirtied Blocks": 0,                                                                                                                +
+               "Shared Written Blocks": 0,                                                                                                                +
+               "Local Hit Blocks": 0,                                                                                                                     +
+               "Local Read Blocks": 0,                                                                                                                    +
+               "Local Dirtied Blocks": 0,                                                                                                                 +
+               "Local Written Blocks": 0,                                                                                                                 +
+               "Temp Read Blocks": 478306,                                                                                                                +
+               "Temp Written Blocks": 476704,                                                                                                             +
+               "WAL Records": 0,                                                                                                                          +
+               "WAL FPI": 0,                                                                                                                              +
+               "WAL Bytes": 0                                                                                                                             +
+             },                                                                                                                                           +
+             {                                                                                                                                            +
+               "Worker Number": 1,                                                                                                                        +
+               "Actual Startup Time": 83275.756,                                                                                                          +
+               "Actual Total Time": 102263.829,                                                                                                           +
+               "Actual Rows": 9095683,                                                                                                                    +
+               "Actual Loops": 1,                                                                                                                         +
+               "Sort Method": "external merge",                                                                                                           +
+               "Sort Space Used": 1085856,                                                                                                                +
+               "Sort Space Type": "Disk",                                                                                                                 +
+               "JIT": {                                                                                                                                   +
+                 "Functions": 10,                                                                                                                         +
+                 "Options": {                                                                                                                             +
+                   "Inlining": true,                                                                                                                      +
+                   "Optimization": true,                                                                                                                  +
+                   "Expressions": true,                                                                                                                   +
+                   "Deforming": true                                                                                                                      +
+                 },                                                                                                                                       +
+                 "Timing": {                                                                                                                              +
+                   "Generation": 0.585,                                                                                                                   +
+                   "Inlining": 71.698,                                                                                                                    +
+                   "Optimization": 61.671,                                                                                                                +
+                   "Emission": 145.115,                                                                                                                   +
+                   "Total": 279.069                                                                                                                       +
+                 }                                                                                                                                        +
+               },                                                                                                                                         +
+               "Shared Hit Blocks": 1369,                                                                                                                 +
+               "Shared Read Blocks": 29395,                                                                                                               +
+               "Shared Dirtied Blocks": 0,                                                                                                                +
+               "Shared Written Blocks": 0,                                                                                                                +
+               "Local Hit Blocks": 0,                                                                                                                     +
+               "Local Read Blocks": 0,                                                                                                                    +
+               "Local Dirtied Blocks": 0,                                                                                                                 +
+               "Local Written Blocks": 0,                                                                                                                 +
+               "Temp Read Blocks": 435133,                                                                                                                +
+               "Temp Written Blocks": 435267,                                                                                                             +
+               "WAL Records": 0,                                                                                                                          +
+               "WAL FPI": 0,                                                                                                                              +
+               "WAL Bytes": 0                                                                                                                             +
+             }                                                                                                                                            +
+           ],                                                                                                                                             +
+           "Plans": [                                                                                                                                     +
+             {                                                                                                                                            +
+               "Node Type": "Hash Join",                                                                                                                  +
+               "Parent Relationship": "Outer",                                                                                                            +
+               "Parallel Aware": true,                                                                                                                    +
+               "Async Capable": false,                                                                                                                    +
+               "Join Type": "Inner",                                                                                                                      +
+               "Startup Cost": 118792.03,                                                                                                                 +
+               "Total Cost": 312157.88,                                                                                                                   +
+               "Plan Rows": 11878432,                                                                                                                     +
+               "Plan Width": 98,                                                                                                                          +
+               "Actual Startup Time": 2434.832,                                                                                                           +
+               "Actual Total Time": 7028.993,                                                                                                             +
+               "Actual Rows": 10000929,                                                                                                                   +
+               "Actual Loops": 3,                                                                                                                         +
+               "Output": ["b1.id", "b1.random_text", "b1.random_number", "b1.created_at", "b2.id", "b2.random_text", "b2.random_number", "b2.created_at"],+
+               "Inner Unique": false,                                                                                                                     +
+               "Hash Cond": "(b1.random_number = b2.random_number)",                                                                                      +
+               "Shared Hit Blocks": 4698,                                                                                                                 +
+               "Shared Read Blocks": 98528,                                                                                                               +
+               "Shared Dirtied Blocks": 0,                                                                                                                +
+               "Shared Written Blocks": 0,                                                                                                                +
+               "Local Hit Blocks": 0,                                                                                                                     +
+               "Local Read Blocks": 0,                                                                                                                    +
+               "Local Dirtied Blocks": 0,                                                                                                                 +
+               "Local Written Blocks": 0,                                                                                                                 +
+               "Temp Read Blocks": 92269,                                                                                                                 +
+               "Temp Written Blocks": 92876,                                                                                                              +
+               "WAL Records": 0,                                                                                                                          +
+               "WAL FPI": 0,                                                                                                                              +
+               "WAL Bytes": 0,                                                                                                                            +
+               "Workers": [                                                                                                                               +
+                 {                                                                                                                                        +
+                   "Worker Number": 0,                                                                                                                    +
+                   "Actual Startup Time": 2668.558,                                                                                                       +
+                   "Actual Total Time": 7112.146,                                                                                                         +
+                   "Actual Rows": 9997511,                                                                                                                +
+                   "Actual Loops": 1,                                                                                                                     +
+                   "Shared Hit Blocks": 36,                                                                                                               +
+                   "Shared Read Blocks": 31971,                                                                                                           +
+                   "Shared Dirtied Blocks": 0,                                                                                                            +
+                   "Shared Written Blocks": 0,                                                                                                            +
+                   "Local Hit Blocks": 0,                                                                                                                 +
+                   "Local Read Blocks": 0,                                                                                                                +
+                   "Local Dirtied Blocks": 0,                                                                                                             +
+                   "Local Written Blocks": 0,                                                                                                             +
+                   "Temp Read Blocks": 30752,                                                                                                             +
+                   "Temp Written Blocks": 28756,                                                                                                          +
+                   "WAL Records": 0,                                                                                                                      +
+                   "WAL FPI": 0,                                                                                                                          +
+                   "WAL Bytes": 0                                                                                                                         +
+                 },                                                                                                                                       +
+                 {                                                                                                                                        +
+                   "Worker Number": 1,                                                                                                                    +
+                   "Actual Startup Time": 2248.414,                                                                                                       +
+                   "Actual Total Time": 7318.060,                                                                                                         +
+                   "Actual Rows": 9095683,                                                                                                                +
+                   "Actual Loops": 1,                                                                                                                     +
+                   "Shared Hit Blocks": 1312,                                                                                                             +
+                   "Shared Read Blocks": 29395,                                                                                                           +
+                   "Shared Dirtied Blocks": 0,                                                                                                            +
+                   "Shared Written Blocks": 0,                                                                                                            +
+                   "Local Hit Blocks": 0,                                                                                                                 +
+                   "Local Read Blocks": 0,                                                                                                                +
+                   "Local Dirtied Blocks": 0,                                                                                                             +
+                   "Local Written Blocks": 0,                                                                                                             +
+                   "Temp Read Blocks": 27945,                                                                                                             +
+                   "Temp Written Blocks": 27720,                                                                                                          +
+                   "WAL Records": 0,                                                                                                                      +
+                   "WAL FPI": 0,                                                                                                                          +
+                   "WAL Bytes": 0                                                                                                                         +
+                 }                                                                                                                                        +
+               ],                                                                                                                                         +
+               "Plans": [                                                                                                                                 +
+                 {                                                                                                                                        +
+                   "Node Type": "Seq Scan",                                                                                                               +
+                   "Parent Relationship": "Outer",                                                                                                        +
+                   "Parallel Aware": true,                                                                                                                +
+                   "Async Capable": false,                                                                                                                +
+                   "Relation Name": "big_table",                                                                                                          +
+                   "Schema": "public",                                                                                                                    +
+                   "Alias": "b1",                                                                                                                         +
+                   "Startup Cost": 0.00,                                                                                                                  +
+                   "Total Cost": 72418.91,                                                                                                                +
+                   "Plan Rows": 2083491,                                                                                                                  +
+                   "Plan Width": 49,                                                                                                                      +
+                   "Actual Startup Time": 0.074,                                                                                                          +
+                   "Actual Total Time": 222.190,                                                                                                          +
+                   "Actual Rows": 1666667,                                                                                                                +
+                   "Actual Loops": 3,                                                                                                                     +
+                   "Output": ["b1.id", "b1.random_text", "b1.random_number", "b1.created_at"],                                                            +
+                   "Shared Hit Blocks": 2464,                                                                                                             +
+                   "Shared Read Blocks": 49120,                                                                                                           +
+                   "Shared Dirtied Blocks": 0,                                                                                                            +
+                   "Shared Written Blocks": 0,                                                                                                            +
+                   "Local Hit Blocks": 0,                                                                                                                 +
+                   "Local Read Blocks": 0,                                                                                                                +
+                   "Local Dirtied Blocks": 0,                                                                                                             +
+                   "Local Written Blocks": 0,                                                                                                             +
+                   "Temp Read Blocks": 0,                                                                                                                 +
+                   "Temp Written Blocks": 0,                                                                                                              +
+                   "WAL Records": 0,                                                                                                                      +
+                   "WAL FPI": 0,                                                                                                                          +
+                   "WAL Bytes": 0,                                                                                                                        +
+                   "Workers": [                                                                                                                           +
+                     {                                                                                                                                    +
+                       "Worker Number": 0,                                                                                                                +
+                       "Actual Startup Time": 0.050,                                                                                                      +
+                       "Actual Total Time": 284.111,                                                                                                      +
+                       "Actual Rows": 1111232,                                                                                                            +
+                       "Actual Loops": 1,                                                                                                                 +
+                       "Shared Hit Blocks": 0,                                                                                                            +
+                       "Shared Read Blocks": 11456,                                                                                                       +
+                       "Shared Dirtied Blocks": 0,                                                                                                        +
+                       "Shared Written Blocks": 0,                                                                                                        +
+                       "Local Hit Blocks": 0,                                                                                                             +
+                       "Local Read Blocks": 0,                                                                                                            +
+                       "Local Dirtied Blocks": 0,                                                                                                         +
+                       "Local Written Blocks": 0,                                                                                                         +
+                       "Temp Read Blocks": 0,                                                                                                             +
+                       "Temp Written Blocks": 0,                                                                                                          +
+                       "WAL Records": 0,                                                                                                                  +
+                       "WAL FPI": 0,                                                                                                                      +
+                       "WAL Bytes": 0                                                                                                                     +
+                     },                                                                                                                                   +
+                     {                                                                                                                                    +
+                       "Worker Number": 1,                                                                                                                +
+                       "Actual Startup Time": 0.025,                                                                                                      +
+                       "Actual Total Time": 183.043,                                                                                                      +
+                       "Actual Rows": 1941202,                                                                                                            +
+                       "Actual Loops": 1,                                                                                                                 +
+                       "Shared Hit Blocks": 1274,                                                                                                         +
+                       "Shared Read Blocks": 18760,                                                                                                       +
+                       "Shared Dirtied Blocks": 0,                                                                                                        +
+                       "Shared Written Blocks": 0,                                                                                                        +
+                       "Local Hit Blocks": 0,                                                                                                             +
+                       "Local Read Blocks": 0,                                                                                                            +
+                       "Local Dirtied Blocks": 0,                                                                                                         +
+                       "Local Written Blocks": 0,                                                                                                         +
+                       "Temp Read Blocks": 0,                                                                                                             +
+                       "Temp Written Blocks": 0,                                                                                                          +
+                       "WAL Records": 0,                                                                                                                  +
+                       "WAL FPI": 0,                                                                                                                      +
+                       "WAL Bytes": 0                                                                                                                     +
+                     }                                                                                                                                    +
+                   ]                                                                                                                                      +
+                 },                                                                                                                                       +
+                 {                                                                                                                                        +
+                   "Node Type": "Hash",                                                                                                                   +
+                   "Parent Relationship": "Inner",                                                                                                        +
+                   "Parallel Aware": true,                                                                                                                +
+                   "Async Capable": false,                                                                                                                +
+                   "Startup Cost": 72413.35,                                                                                                              +
+                   "Total Cost": 72413.35,                                                                                                                +
+                   "Plan Rows": 2082935,                                                                                                                  +
+                   "Plan Width": 49,                                                                                                                      +
+                   "Actual Startup Time": 1235.161,                                                                                                       +
+                   "Actual Total Time": 1235.163,                                                                                                         +
+                   "Actual Rows": 1666667,                                                                                                                +
+                   "Actual Loops": 3,                                                                                                                     +
+                   "Output": ["b2.id", "b2.random_text", "b2.random_number", "b2.created_at"],                                                            +
+                   "Hash Buckets": 131072,                                                                                                                +
+                   "Original Hash Buckets": 131072,                                                                                                       +
+                   "Hash Batches": 64,                                                                                                                    +
+                   "Original Hash Batches": 64,                                                                                                           +
+                   "Peak Memory Usage": 7936,                                                                                                             +
+                   "Shared Hit Blocks": 2176,                                                                                                             +
+                   "Shared Read Blocks": 49408,                                                                                                           +
+                   "Shared Dirtied Blocks": 0,                                                                                                            +
+                   "Shared Written Blocks": 0,                                                                                                            +
+                   "Local Hit Blocks": 0,                                                                                                                 +
+                   "Local Read Blocks": 0,                                                                                                                +
+                   "Local Dirtied Blocks": 0,                                                                                                             +
+                   "Local Written Blocks": 0,                                                                                                             +
+                   "Temp Read Blocks": 0,                                                                                                                 +
+                   "Temp Written Blocks": 46060,                                                                                                          +
+                   "WAL Records": 0,                                                                                                                      +
+                   "WAL FPI": 0,                                                                                                                          +
+                   "WAL Bytes": 0,                                                                                                                        +
+                   "Workers": [                                                                                                                           +
+                     {                                                                                                                                    +
+                       "Worker Number": 0,                                                                                                                +
+                       "Actual Startup Time": 1295.282,                                                                                                   +
+                       "Actual Total Time": 1295.284,                                                                                                     +
+                       "Actual Rows": 1990634,                                                                                                            +
+                       "Actual Loops": 1,                                                                                                                 +
+                       "Shared Hit Blocks": 7,                                                                                                            +
+                       "Shared Read Blocks": 20515,                                                                                                       +
+                       "Shared Dirtied Blocks": 0,                                                                                                        +
+                       "Shared Written Blocks": 0,                                                                                                        +
+                       "Local Hit Blocks": 0,                                                                                                             +
+                       "Local Read Blocks": 0,                                                                                                            +
+                       "Local Dirtied Blocks": 0,                                                                                                         +
+                       "Local Written Blocks": 0,                                                                                                         +
+                       "Temp Read Blocks": 0,                                                                                                             +
+                       "Temp Written Blocks": 18308,                                                                                                      +
+                       "WAL Records": 0,                                                                                                                  +
+                       "WAL FPI": 0,                                                                                                                      +
+                       "WAL Bytes": 0                                                                                                                     +
+                     },                                                                                                                                   +
+                     {                                                                                                                                    +
+                       "Worker Number": 1,                                                                                                                +
+                       "Actual Startup Time": 1098.805,                                                                                                   +
+                       "Actual Total Time": 1098.807,                                                                                                     +
+                       "Actual Rows": 1032468,                                                                                                            +
+                       "Actual Loops": 1,                                                                                                                 +
+                       "Shared Hit Blocks": 9,                                                                                                            +
+                       "Shared Read Blocks": 10635,                                                                                                       +
+                       "Shared Dirtied Blocks": 0,                                                                                                        +
+                       "Shared Written Blocks": 0,                                                                                                        +
+                       "Local Hit Blocks": 0,                                                                                                             +
+                       "Local Read Blocks": 0,                                                                                                            +
+                       "Local Dirtied Blocks": 0,                                                                                                         +
+                       "Local Written Blocks": 0,                                                                                                         +
+                       "Temp Read Blocks": 0,                                                                                                             +
+                       "Temp Written Blocks": 9560,                                                                                                       +
+                       "WAL Records": 0,                                                                                                                  +
+                       "WAL FPI": 0,                                                                                                                      +
+                       "WAL Bytes": 0                                                                                                                     +
+                     }                                                                                                                                    +
+                   ],                                                                                                                                     +
+                   "Plans": [                                                                                                                             +
+                     {                                                                                                                                    +
+                       "Node Type": "Seq Scan",                                                                                                           +
+                       "Parent Relationship": "Outer",                                                                                                    +
+                       "Parallel Aware": true,                                                                                                            +
+                       "Async Capable": false,                                                                                                            +
+                       "Relation Name": "big_table2",                                                                                                     +
+                       "Schema": "public",                                                                                                                +
+                       "Alias": "b2",                                                                                                                     +
+                       "Startup Cost": 0.00,                                                                                                              +
+                       "Total Cost": 72413.35,                                                                                                            +
+                       "Plan Rows": 2082935,                                                                                                              +
+                       "Plan Width": 49,                                                                                                                  +
+                       "Actual Startup Time": 1.092,                                                                                                      +
+                       "Actual Total Time": 391.840,                                                                                                      +
+                       "Actual Rows": 1666667,                                                                                                            +
+                       "Actual Loops": 3,                                                                                                                 +
+                       "Output": ["b2.id", "b2.random_text", "b2.random_number", "b2.created_at"],                                                        +
+                       "Shared Hit Blocks": 2176,                                                                                                         +
+                       "Shared Read Blocks": 49408,                                                                                                       +
+                       "Shared Dirtied Blocks": 0,                                                                                                        +
+                       "Shared Written Blocks": 0,                                                                                                        +
+                       "Local Hit Blocks": 0,                                                                                                             +
+                       "Local Read Blocks": 0,                                                                                                            +
+                       "Local Dirtied Blocks": 0,                                                                                                         +
+                       "Local Written Blocks": 0,                                                                                                         +
+                       "Temp Read Blocks": 0,                                                                                                             +
+                       "Temp Written Blocks": 0,                                                                                                          +
+                       "WAL Records": 0,                                                                                                                  +
+                       "WAL FPI": 0,                                                                                                                      +
+                       "WAL Bytes": 0,                                                                                                                    +
+                       "Workers": [                                                                                                                       +
+                         {                                                                                                                                +
+                           "Worker Number": 0,                                                                                                            +
+                           "Actual Startup Time": 3.228,                                                                                                  +
+                           "Actual Total Time": 451.118,                                                                                                  +
+                           "Actual Rows": 1990634,                                                                                                        +
+                           "Actual Loops": 1,                                                                                                             +
+                           "Shared Hit Blocks": 7,                                                                                                        +
+                           "Shared Read Blocks": 20515,                                                                                                   +
+                           "Shared Dirtied Blocks": 0,                                                                                                    +
+                           "Shared Written Blocks": 0,                                                                                                    +
+                           "Local Hit Blocks": 0,                                                                                                         +
+                           "Local Read Blocks": 0,                                                                                                        +
+                           "Local Dirtied Blocks": 0,                                                                                                     +
+                           "Local Written Blocks": 0,                                                                                                     +
+                           "Temp Read Blocks": 0,                                                                                                         +
+                           "Temp Written Blocks": 0,                                                                                                      +
+                           "WAL Records": 0,                                                                                                              +
+                           "WAL FPI": 0,                                                                                                                  +
+                           "WAL Bytes": 0                                                                                                                 +
+                         },                                                                                                                               +
+                         {                                                                                                                                +
+                           "Worker Number": 1,                                                                                                            +
+                           "Actual Startup Time": 0.031,                                                                                                  +
+                           "Actual Total Time": 216.664,                                                                                                  +
+                           "Actual Rows": 1032468,                                                                                                        +
+                           "Actual Loops": 1,                                                                                                             +
+                           "Shared Hit Blocks": 9,                                                                                                        +
+                           "Shared Read Blocks": 10635,                                                                                                   +
+                           "Shared Dirtied Blocks": 0,                                                                                                    +
+                           "Shared Written Blocks": 0,                                                                                                    +
+                           "Local Hit Blocks": 0,                                                                                                         +
+                           "Local Read Blocks": 0,                                                                                                        +
+                           "Local Dirtied Blocks": 0,                                                                                                     +
+                           "Local Written Blocks": 0,                                                                                                     +
+                           "Temp Read Blocks": 0,                                                                                                         +
+                           "Temp Written Blocks": 0,                                                                                                      +
+                           "WAL Records": 0,                                                                                                              +
+                           "WAL FPI": 0,                                                                                                                  +
+                           "WAL Bytes": 0                                                                                                                 +
+                         }                                                                                                                                +
+                       ]                                                                                                                                  +
+                     }                                                                                                                                    +
+                   ]                                                                                                                                      +
+                 }                                                                                                                                        +
+               ]                                                                                                                                          +
+             }                                                                                                                                            +
+           ]                                                                                                                                              +
+         }                                                                                                                                                +
+       ]                                                                                                                                                  +
+     },                                                                                                                                                   +
+     "Settings": {                                                                                                                                        +
+     },                                                                                                                                                   +
+     "Planning": {                                                                                                                                        +
+       "Shared Hit Blocks": 195,                                                                                                                          +
+       "Shared Read Blocks": 0,                                                                                                                           +
+       "Shared Dirtied Blocks": 0,                                                                                                                        +
+       "Shared Written Blocks": 0,                                                                                                                        +
+       "Local Hit Blocks": 0,                                                                                                                             +
+       "Local Read Blocks": 0,                                                                                                                            +
+       "Local Dirtied Blocks": 0,                                                                                                                         +
+       "Local Written Blocks": 0,                                                                                                                         +
+       "Temp Read Blocks": 0,                                                                                                                             +
+       "Temp Written Blocks": 0                                                                                                                           +
+     },                                                                                                                                                   +
+     "Planning Time": 1.560,                                                                                                                              +
+     "Triggers": [                                                                                                                                        +
+     ],                                                                                                                                                   +
+     "JIT": {                                                                                                                                             +
+       "Functions": 30,                                                                                                                                   +
+       "Options": {                                                                                                                                       +
+         "Inlining": true,                                                                                                                                +
+         "Optimization": true,                                                                                                                            +
+         "Expressions": true,                                                                                                                             +
+         "Deforming": true                                                                                                                                +
+       },                                                                                                                                                 +
+       "Timing": {                                                                                                                                        +
+         "Generation": 1.701,                                                                                                                             +
+         "Inlining": 181.751,                                                                                                                             +
+         "Optimization": 184.749,                                                                                                                         +
+         "Emission": 422.176,                                                                                                                             +
+         "Total": 790.376                                                                                                                                 +
+       }                                                                                                                                                  +
+     },                                                                                                                                                   +
+     "Execution Time": 185673.838                                                                                                                         +
+   }                                                                                                                                                      +
+ ]
+(1 row)
+

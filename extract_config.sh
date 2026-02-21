@@ -1,3 +1,7 @@
+#!/bin/bash
+
+
+
 psql -p 5432 -At -F',' -c " SELECT
     name,
     CASE
@@ -50,3 +54,6 @@ WHERE name IN (
 )
 ORDER BY name;
 " > pg_config_snapshot.csv
+
+
+
