@@ -1,6 +1,6 @@
 import json
 
-with open('/home/bo/Desktop/fuck/pg_plan_analyser/clean.json') as f:
+with open('/home/bo/Desktop/fuck/pg_plan_analyser/index_tips_big_table.json') as f:
 	data = json.load(f)
 
 root = data[0]               # PostgreSQL wraps it in a list
@@ -51,9 +51,23 @@ def walk(node, depth=0):
     shared_read = node.get("Shared Read Blocks",0)
 
     shared_hit_percentage = (shared_hit / (shared_hit + shared_read))*100
-    
 
     print(f"{indent}  Shared hit percentage : {shared_hit_percentage:.2f} %")
+
+    #check how many rows are removed by filter
+    if node.get("Rows Removed by Filter",0)!= 0:
+        row_removed = node.get("Rows Removed by Filter",0)
+        if node.get("Actual Loops",0) != 0:
+            actual_loops = node.get("Actual Loops",0)
+            row_removed = row_removed * actual_loops
+            row_returned_removed_ratio = (actual_rows/row_removed) * 100
+            print(f"{indent}  row_returned_removed_ratio : {row_returned_removed_ratio:.5f} %")
+            
+
+    
+
+
+    
         
 
 
