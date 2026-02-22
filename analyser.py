@@ -54,6 +54,17 @@ def walk(node, depth=0):
 
     print(f"{indent}  Shared hit percentage : {shared_hit_percentage:.2f} %")
 
+
+    #column used in filter
+    column_in_filter = [
+        col for col in node.get("Output", [])
+        if col in (node.get("Filter") or "")
+    ]
+
+
+    table_name = node.get("Relation Name")
+
+
     #check how many rows are removed by filter
     if node.get("Rows Removed by Filter",0)!= 0:
         row_removed = node.get("Rows Removed by Filter",0)
@@ -62,13 +73,11 @@ def walk(node, depth=0):
             row_removed = row_removed * actual_loops
             row_returned_removed_ratio = (actual_rows/row_removed) * 100
             print(f"{indent}  row_returned_removed_ratio : {row_returned_removed_ratio:.5f} %")
+            if row_returned_removed_ratio < 15 and (row_removed+actual_rows) > 1000000:
+                print(f"{indent}  consider adding an index on {table_name} , columns {column_in_filter}, : because {row_removed:.0f} rows were removed by the filter")
             
 
-    
-
-
-    
-        
+   
 
 
 
