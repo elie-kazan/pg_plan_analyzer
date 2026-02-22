@@ -1,6 +1,14 @@
 import json
+import sys
 
-with open('/home/bo/Desktop/pg/pg_plan_analyser/index_tips_big_table.json') as f:
+if len(sys.argv) < 2:
+    print("Usage : python3 analyse.py <json_file>")
+    sys.exit(1)
+
+filename = sys.argv[1]
+
+
+with open(filename) as f:
 	data = json.load(f)
 
 root = data[0]               # PostgreSQL wraps it in a list
