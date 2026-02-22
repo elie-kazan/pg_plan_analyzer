@@ -11,6 +11,7 @@ print("\n=== QUERY SUMMARY ===")
 print(f"Execution time: {execution_time:.2f} ms\n")
 
 
+
 # -------- WALK FUNCTION --------
 def walk(node, depth=0):
     indent = "  " * depth
@@ -33,6 +34,30 @@ def walk(node, depth=0):
     # Detect disk spill
     if node.get("Temp Written Blocks", 0) > 0:
         print(f"{indent}  ⚠ Disk spill detected")
+
+    # work_mem
+    if node.get("Sort Method") == "external merge":
+    	sort_kb = node.get("Sort Space Used",0)
+    	required_mb = sort_kb / 1024
+
+    	print(f"{indent}  ⚠ Disk sort detected,Required approx: {required_mb:.0f} MB")
+
+    #go through the workers and get the info
+    Workers = node.get("Workers")
+    if Workers:
+        print(f"{indent}  Number of workers: {len(Workers):.0f} ")
+
+    shared_hit = node.get("Shared Hit Blocks",0)
+    shared_read = node.get("Shared Read Blocks",0)
+
+    shared_hit_percentage = (shared_hit / (shared_hit + shared_read))*100
+    
+
+    print(f"{indent}  Shared hit percentage : {shared_hit_percentage:.2f} %")
+        
+
+
+
 
     print()
 
