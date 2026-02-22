@@ -1,6 +1,6 @@
 import json
 
-with open('/home/bo/Desktop/fuck/pg_plan_analyser/index_tips_big_table.json') as f:
+with open('/home/bo/Desktop/pg/pg_plan_analyser/index_tips_big_table.json') as f:
 	data = json.load(f)
 
 root = data[0]               # PostgreSQL wraps it in a list
