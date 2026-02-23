@@ -55,12 +55,14 @@ def walk(node, depth=0):
     if Workers:
         print(f"{indent}  Number of workers: {len(Workers):.0f} ")
 
+
+    #display shared hit percentage for scans
     shared_hit = node.get("Shared Hit Blocks",0)
     shared_read = node.get("Shared Read Blocks",0)
-
     shared_hit_percentage = (shared_hit / (shared_hit + shared_read))*100
 
-    print(f"{indent}  Shared hit percentage : {shared_hit_percentage:.2f} %")
+    if node_type == "Seq Scan":
+        print(f"{indent}  Shared hit percentage : {shared_hit_percentage:.2f} %")
 
 
     #column used in filter
