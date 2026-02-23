@@ -73,7 +73,7 @@ def walk(node, depth=0):
     table_name = node.get("Relation Name")
 
 
-    #check how many rows are removed by filter
+    #check how many rows are removed by filter and if you need an index eventually
     if node.get("Rows Removed by Filter",0)!= 0:
         row_removed = node.get("Rows Removed by Filter",0)
         if node.get("Actual Loops",0) != 0:
